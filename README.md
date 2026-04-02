@@ -4,18 +4,18 @@ A program that approximates the value of pi to an arbitrary level of precision.
 
 ## Status
 
-🚧 **Work in Progress:** Currently translating the documentation, refactoring the core algorithm, and preparing the UI. The code will be published soon.
+🚧 **Work in Progress:** The documentation is being translated, the core algorithm is being refactored, and the UI is in development.
 
 ## Project Structure
 
-- main.py: Main entry point for Pi calculation and accuracy reporting.
-- pi_core/core.py: Core math functions (Pi calculation and accurate-digit count).
-- pi_core/config.py: Shared configuration constants (for example DEFAULT_K).
-- pi_core/time_model.py: Time-model utilities (fit, save/load, predict, unit conversions).
-- scripts/calibrate_k.py: Empirically searches for an effective k coefficient.
-- scripts/benchmark_runtime.py: Collects benchmark timings for selected j values.
-- scripts/fit_time_model.py: Fits quadratic time-model coefficients from benchmark data.
-- scripts/predict_runtime.py: Predicts runtime from saved coefficients.
+- `main.py` — Main entry point for Pi calculation and accuracy reporting.
+- `pi_core/core.py` - Core math functions (Pi calculation and accurate-digit count).
+- `pi_core/config.py` - Shared configuration constants (e.g. DEFAULT_K).
+- `pi_core/time_model.py` - Time-model utilities (fit, save/load, predict, unit conversions).
+- `scripts/calibrate_k.py` - Empirically searches for an effective k coefficient.
+- `scripts/benchmark_runtime.py` - Collects benchmark timings for selected j values.
+- `scripts/fit_time_model.py` - Fits quadratic time-model coefficients from benchmark data.
+- `scripts/predict_runtime.py` - Predicts runtime from saved coefficients.
 
 ## Requirements
 
@@ -31,7 +31,7 @@ pip install mpmath numpy
 
 ### Optional: Massive Performance Boost
 
-The core algorithm heavily relies on `mpmath` for arbitrary-precision arithmetic. By default, `mpmath` uses Python's built-in math, which is perfectly fine for basic testing but slows down significantly when calculating thousands of digits.
+The core algorithm heavily relies on `mpmath` for arbitrary-precision arithmetic. By default, `mpmath` uses Python's built-in arithmetic, which is fine for basic testing but becomes slow when calculating thousands of digits.
 
 For a **massive speedup**, it is highly recommended to install `gmpy2`. The `mpmath` library will automatically detect it and use its C-based backend without any code changes required on your part.
 
@@ -39,7 +39,12 @@ For a **massive speedup**, it is highly recommended to install `gmpy2`. The `mpm
 pip install gmpy2
 ```
 
-Note for Windows users: gmpy2 is a C-extension. If pip fails to build it, the easiest workaround is to use conda (conda install gmpy2) or to download a pre-compiled .whl file. If you can't install it, don't worry — the calculator will still work perfectly fine using the pure Python backend (just a bit slower).
+Note for Windows users: `gmpy2` is a C extension.
+If pip fails to build it, you can:
+- use conda (`conda install gmpy2`)
+- or download a precompiled `.whl` file
+
+If you can't install it, the calculator will still work using the pure Python backend (just slower).
 
 
 ## Typical Workflow
@@ -50,7 +55,7 @@ Note for Windows users: gmpy2 is a C-extension. If pip fails to build it, the ea
 python scripts/benchmark_runtime.py
 ```
 
-This creates benchmark_results.json.
+This creates `benchmark_results.json`.
 
 2. Fit time-model coefficients:
 
@@ -58,7 +63,7 @@ This creates benchmark_results.json.
 python scripts/fit_time_model.py
 ```
 
-This creates time_model_coefficients.json.
+This creates `time_model_coefficients.json`.
 
 3. Predict runtime:
 
@@ -74,12 +79,10 @@ The output includes seconds, minutes, hours, and days.
 python scripts/calibrate_k.py
 ```
 
-This script searches for an empirical k value and writes a summary to calc_pi_test_approx_koef.txt.
+This script searches for an empirical k value and writes a summary to `k_calibration.txt`.
 
 
 ## The History and Essence of the Algorithm
-
-_This section is a draft_
 
 The algorithm was developed and the initial implementation was written in early summer 2025.
 
@@ -87,9 +90,8 @@ The algorithm is based on the similarity between a polygon with a large number o
 
 At the time of development, I was not aware that Archimedes had already used this method, so this implementation is mainly for educational purposes.
 
-...
-
----
+_To be continued_
 
 ## Test Results
-...
+
+_To be continued_

@@ -16,6 +16,6 @@ Thumbs.db
 .ipynb_checkpoints/
 .env
 
-calc_pi_test_approx_koef.txt
+k_calibration.txt
 benchmark_results.json
 time_model_coefficients.json
