@@ -4,7 +4,7 @@ import time
 from pi_core import DEFAULT_K, calculate_pi, count_accurate_digits
 
 def main():
-    j = 100000
+    j = 5000
 
     # Derive precision from j using the shared empirical coefficient.
     precision = int(DEFAULT_K * j) + 10 # add a small buffer to ensure we can count accurate digits correctly

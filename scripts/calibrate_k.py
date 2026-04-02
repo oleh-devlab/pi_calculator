@@ -17,7 +17,7 @@ def worker_task(args):
         start_time = time.perf_counter()
         with mp.workdps(int(k * j)):
             error = abs(pi(j, int(k * j)) - mp.pi)
-        er = count_accurate_digits(error)
+            er = count_accurate_digits(error)
         end_time = time.perf_counter()
         seconds = end_time - start_time
         return (k, er, seconds, None)
@@ -36,6 +36,7 @@ if __name__ == "__main__":
     max_er = 0
     min_k = -1
     final_seconds = "0"
+    plateau_count = 0
 
 
     log_12 = mpmath.log10(12)
@@ -70,6 +71,9 @@ if __name__ == "__main__":
                 
             elif er_res == max_er and max_er > 0:
                 plateau_count += 1
+
+            else:
+                plateau_count = 0
             
             if (plateau_count >= dynamic_plateau_limit):
                 if max_er >= (theoretical_max_digits - max_theoretical_digits_error):
