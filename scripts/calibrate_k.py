@@ -89,7 +89,7 @@ if __name__ == "__main__":
         print(f"Best k: {min_k}")
         print(f"Calculated digits after decimal: {max_er}")
         
-        file_name = "calc_pi_test_approx_koef.txt"
+        file_name = "k_calibration.txt"
 
         try:
             with open(file_name, "w", encoding="utf-8") as f:
