@@ -79,7 +79,7 @@ The output includes seconds, minutes, hours, and days.
 python scripts/calibrate_k.py
 ```
 
-This script searches for an empirical k value and writes a summary to `k_calibration.txt.txt`.
+This script searches for an empirical k value and writes a summary to `k_calibration.txt`.
 
 
 ## The History and Essence of the Algorithm
