@@ -54,17 +54,15 @@ if __name__ == "__main__":
     print("Collected results (j, time in seconds):")
     
     # Filter out failed runs and fill the results dictionary.
-    valid_results = []
     for j_res, time_res, error_msg in results:
         if not error_msg:
             print(f"  j = {j_res:<5} | Time = {time_res:.4f} s")
             results_data[j_res] = time_res
-            valid_results.append((j_res, time_res))
 
     # Save results to a file for later analysis.
-    file_path = "benchmark_results.json"
+    file_path = PROJECT_ROOT / "benchmark_results.json"
     try:
-        with open(file_path, "w") as f:
+        with open(file_path, "w", encoding="utf-8") as f:
             json.dump(results_data, f, indent=4)
         print(f"\nData saved to file: {file_path}")
         print("These data can now be used to build a more accurate model.")

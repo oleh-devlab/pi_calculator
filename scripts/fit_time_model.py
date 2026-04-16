@@ -37,6 +37,6 @@ def fit_and_save_coefficients(benchmark_file_path, model_file_path):
 
 
 if __name__ == "__main__":
-    BENCHMARK_FILE = "benchmark_results.json"
-    MODEL_FILE = "time_model_coefficients.json"
+    BENCHMARK_FILE = PROJECT_ROOT / "benchmark_results.json"
+    MODEL_FILE = PROJECT_ROOT / "time_model_coefficients.json"
     fit_and_save_coefficients(BENCHMARK_FILE, MODEL_FILE)

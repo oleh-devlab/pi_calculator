@@ -33,6 +33,6 @@ def predict_from_saved_model(model_file_path, j_target):
 
 
 if __name__ == "__main__":
-    MODEL_FILE = "time_model_coefficients.json"
+    MODEL_FILE = PROJECT_ROOT / "time_model_coefficients.json"
     j_to_check = 100000
     predict_from_saved_model(MODEL_FILE, j_to_check)

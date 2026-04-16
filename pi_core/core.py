@@ -3,7 +3,9 @@ import mpmath
 
 
 # We assume that the polygon is regular.
-def calculate_pi(j: mpf, precision=None) -> mpf:
+def calculate_pi(j: int, precision=None) -> mpf:
+    if not isinstance(j, int):
+        raise TypeError("j must be an int")
     if precision is None:
         precision = mp.dps
 
